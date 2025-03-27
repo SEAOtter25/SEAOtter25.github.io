@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="3.1OrderDetail.css">
+    <title>รายละเอียดคำสั่งซื้อ</title>
+</head>
+<body>
+    <div class="Menu-bar">
+        <button onclick="location.href='2Inventory.html'">คลังสินค้า</button>
+        <button onclick="location.href='3Order.html'">คำสั่งซื้อ</button>
+        <button onclick="location.href='4Project.html'">โครงการ</button>
+        <button onclick="location.href='5Report.html'">รายงาน</button>
+    </div>
+
+    <div class="Container">
+        <h1>รายละเอียดคำสั่งซื้อ</h1>
+        <div class="Order-Info">
+            <p><strong>หมายเลขคำสั่งซื้อ:</strong> <span id="order-number"></span></p>
+            <p><strong>ผู้จัดหา:</strong> <span id="supplier-name"></span></p>
+            <p><strong>เบอร์ติดต่อ:</strong> <span id="supplier-contact"></span></p>
+            <p><strong>วันที่คำสั่งซื้อ:</strong> <span id="order-date"></span></p>
+            <p><strong>ราคารวม:</strong> <span id="order-total"></span></p>
+        </div>
+
+        <h2>รายการวัสดุ</h2>
+        <div class="Table-Container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ชื่อวัสดุ</th>
+                        <th>จำนวน</th>
+                        <th>ราคาต่อหน่วย</th>
+                        <th>ราคารวม</th>
+                    </tr>
+                </thead>
+                <tbody id="Order-detail-data">
+                    <!-- ข้อมูลจะถูกเพิ่มที่นี่ผ่าน JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // ดึงหมายเลขคำสั่งซื้อจาก URL Parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderNumber = urlParams.get('order_number');
+
+        // แสดงหมายเลขคำสั่งซื้อในหน้า
+        document.getElementById('order-number').textContent = orderNumber;
+
+        // ดึงข้อมูลรายละเอียดคำสั่งซื้อจาก 3.2Connect_OrderDetail.php
+        fetch(`http://localhost/Pro1_Final/3.1OrderDetail.php?order_number=${orderNumber}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error('Error:', data.error);
+                return;
+            }
+
+            // แสดงข้อมูลของคำสั่งซื้อ
+            document.getElementById('supplier-name').textContent = data.supplier_name;
+            document.getElementById('supplier-contact').textContent = data.supplier_contact;
+            document.getElementById('order-date').textContent = data.order_date;
+            document.getElementById('order-total').textContent = data.order_total;
+
+            // แสดงรายการวัสดุในคำสั่งซื้อ
+            const tbody = document.getElementById('Order-detail-data');
+            tbody.innerHTML = '';
+            data.materials.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td>${item.material_name}</td>
+                <td>${item.quantity}</td>
+                <td>${item.unit_price}</td>
+                <td>${item.total_price}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('การค้นหาข้อมูลผิดพลาด:', error));
+    </script>
+</body>
+</html>

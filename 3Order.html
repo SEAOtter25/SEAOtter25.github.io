@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="3Order.css">
+    <title>คำสั่งซื้อ</title>
+</head>
+<body>
+    <div class="Menu-bar">
+        <button onclick="location.href='2Inventory.html'">คลังสินค้า</button>
+        <button onclick="location.href='3Order.html'">จัดซื้อ</button>
+        <button onclick="location.href='4Project.html'">โครงการ</button>
+        <button onclick="location.href='5Report.html'">รายงาน</button>
+    </div>
+
+    <div class="Container">
+        <h1>คำสั่งซื้อ</h1>
+        <div class="Table-Container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>หมายเลขคำสั่งซื้อ</th>
+                        <th>ผู้จัดหา</th>
+                        <th>เบอร์ติดต่อ</th>
+                        <th>วันจัดส่ง</th>
+                        <th>ระยะเวลาการจัดส่ง</th>
+                        <th>ราคารวม</th>
+                    </tr>
+                </thead>
+                <tbody id="Order-data">
+                    <!-- ข้อมูลจะถูกเพิ่มที่นี่ผ่าน JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // ดึงข้อมูลคำสั่งซื้อจาก 3Connect_Order.php
+        fetch('http://localhost/Pro1_Final/3Order.php')
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.getElementById('Order-data');
+            tbody.innerHTML = '';
+            if (data.error) {
+                console.error('Error:', data.error);
+                return;
+            }
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td><a href="3.2OrderDetail.html?order_number=${item.Order_Number}">${item.Order_Number}</a></td>
+                <td>${item.Sup_Name}</td>
+                <td>${item.Sup_Number}</td>
+                <td>${item.Order_Date}</td>
+                <td>${item.Order_Duration}</td>
+                <td>${item.Order_Total}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('การค้นหาข้อมูลผิดพลาด:', error));
+    </script>
+</body>
+</html>

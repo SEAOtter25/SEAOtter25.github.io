@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="2.1Inventory.css">
+    <title>เพิ่มวัสดุ</title>
+</head>
+<body>
+    <div class="Menu-bar">
+        <button onclick="location.href='2Inventory.html'">คลังสินค้า</button>
+        <button onclick="location.href='3Order.html'">จัดซื้อ</button>
+        <button onclick="location.href='4Project.html'">โครงการ</button>
+        <button onclick="location.href='5Report.html'">รายงาน</button>
+    </div>
+
+    <div class="Container">
+        <h1>เพิ่มวัสดุ</h1>
+        <form id="add-inventory-form">
+            <label for="category_name">หมวดหมู่:</label>
+            <input list="categories" id="category_name" name="category_name" required>
+            <datalist id="categories"></datalist>
+
+            <label for="type_name">ประเภท:</label>
+            <input list="types" id="type_name" name="type_name" required>
+            <datalist id="types"></datalist>
+
+            <label for="material_name">ชื่อวัสดุ:</label>
+            <input list="materials" id="material_name" name="material_name" required>
+            <datalist id="materials"></datalist>
+
+            <label for="sup_name">ชื่อผู้จัดหา:</label>
+            <input list="suppliers" id="sup_name" name="sup_name" required>
+            <datalist id="suppliers"></datalist>
+
+            <label for="sm_price">ราคาต่อหน่วย:</label>
+            <input type="number" step="0.01" id="sm_price" name="sm_price" required>
+
+            <label for="quantity">จำนวน:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <button type="submit">เพิ่มวัสดุ</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // ดึงข้อมูลสำหรับการกรอกฟอร์ม
+        fetch('http://localhost/Pro1_Final/2.1AddInventory.php')
+        .then(response => response.json())
+        .then(data => {
+            const categoriesList = document.getElementById('categories');
+            data.categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.Category_Name;
+                categoriesList.appendChild(option);
+            });
+
+            const typesList = document.getElementById('types');
+            data.types.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type.Type_Name;
+                typesList.appendChild(option);
+            });
+
+            const suppliersList = document.getElementById('suppliers');
+            data.suppliers.forEach(supplier => {
+                const option = document.createElement('option');
+                option.value = supplier.Sup_Name;
+                suppliersList.appendChild(option);
+            });
+
+            const materialsList = document.getElementById('materials');
+            data.materials.forEach(material => {
+                const option = document.createElement('option');
+                option.value = material.Material_Name;
+                materialsList.appendChild(option);
+            });
+        });
+
+        // อัปเดตราคาต่อหน่วยอัตโนมัติเมื่อเลือกชื่อผู้จัดหาและชื่อวัสดุ
+        function updatePrice() {
+            const materialName = document.getElementById('material_name').value;
+            const supplierName = document.getElementById('sup_name').value;
+            if (materialName && supplierName) {
+                fetch(`http://localhost/Pro1_Final/get_material_price.php?material_name=${materialName}&sup_name=${supplierName}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.price) {
+                        document.getElementById('sm_price').value = data.price;
+                    } else {
+                        document.getElementById('sm_price').value = '';
+                    }
+                })
+                .catch(error => console.error('การค้นหาข้อมูลผิดพลาด:', error));
+            }
+        }
+
+        document.getElementById('material_name').addEventListener('change', updatePrice);
+        document.getElementById('sup_name').addEventListener('change', updatePrice);
+
+        // ส่งข้อมูลฟอร์ม
+        document.getElementById('add-inventory-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('http://localhost/Pro1_Final/2.1AddInventory.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                if (data.success) {
+                    resultDiv.innerHTML = `<p>${data.success}</p>`;
+                    // ย้อนกลับไปหน้า 2Inventory.html หลังจากแสดงข้อความ 2 วินาที
+                    setTimeout(() => {
+                        window.location.href = '2Inventory.html';
+                    }, 2000);
+                } else {
+                    resultDiv.innerHTML = `<p>${data.error}</p>`;
+                }
+            })
+            .catch(error => console.error('การเพิ่มข้อมูลผิดพลาด:', error));
+        });
+    </script>
+</body>
+</html>
