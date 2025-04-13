@@ -1,10 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Oswald", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #181818;
-    color: aliceblue;
+    background-color: #334eac;
+    color: #F5EfEb;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -14,7 +19,7 @@ body {
 }
 
 header {
-    background-color: #222;
+    background-color: #bad6eb;
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -32,53 +37,54 @@ header {
 }
 
 .navbar ul li a {
-    color: #ccc;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     background-color: 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    color: aliceblue;
+    color: #334eac;
 }
 
 .navbar ul li.active a {
-    color:aliceblue;
+    color:#334eac;
 }
 
 .main-home { 
-    background-color: #292929;
+    background-color: #fff9ef;
     padding: 80px 0;
     text-align: center;
 }
 
 .main-home h1 {
+    color: #334eac;
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
 .main-home p {
     font-size: 1.1rem;
-    color: #ccc;
+    color: #bad6eb;
     margin-bottom: 15px;    
 }
 
 .button {
     display: inline-block;
-    background-color: #222;
-    color: #fff;
+    background-color: #fff9ef;
+    color: #334eac;
     padding: 10px 20px;
     text-decoration: none;
     border-style:double;
     border-radius: 50px;
-    border-color: #fff;
+    border-color: #334eac;
 }
 
 .button:hover {
-    background-color: aliceblue;
-    color: #292929;
+    background-color: #334eac;
+    color: #ffffff;
     border-style: double;
-    border-color: #292929;
+    border-color: #ffffff;
     border-radius: 50px;
 }
 
@@ -93,6 +99,7 @@ header {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
+    color:#334eac;
 }
 
 .project-grid {
@@ -103,23 +110,30 @@ header {
 }
 
 .project-card {
-    background-color: #222;
+    background-color: #334eac;
+    border-color: #ffffff;
+    border-style: solid;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
 }
 
 .project-card h3 {
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
+.project-card p {
+    color: #ffffff;
+}
+
 .project-card a {
     text-decoration: none;
-    color: #eee;
+    color: #ffffff;
 }
 
 .project-card a:hover {
-    color: #333;
+    color: #bad6eb;
 }
 
 .project-picture img{
@@ -131,7 +145,8 @@ header {
 
 .main-about {
     padding: 60px 0;
-    background-color: #292929;
+    background-color: #ffffff;
+    color: #334eac;
 }
 
 .main-about .container p {
@@ -139,8 +154,8 @@ header {
 }
 
 footer {
-    background-color: #333;
-    color: #eee;
+    background-color: #bad6eb;
+    color: #ffffff;
     text-align: center;
     padding: 1rem ;
     bottom: 0;
@@ -157,9 +172,13 @@ footer {
 
 .main-contact ul li a{
     text-decoration: none;
-    color: #eee
+    color: #334eac
+}
+
+.main-contact {
+    background-color: #ffffff;
 }
 
 .main-contact ul li a:hover {
-    color: #333;
+    color: #bad6eb;
 }
