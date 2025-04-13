@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#more">More</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home" class="main-home">
+            <div class="container">
+                <h1>Hello This My Portfolio</h1>
+                <p>I am eager to pursue a career as a Front-End Developer and am committed to continuous learning and skill enhancement.</p>
+                <a href="#work" class="button">ผลงาน</a>
+            </div>
+        </section>  
+    
+        <section id="work" class="main-work">
+            <h2>My Project</h2>
+            <div class="container">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม</h3>
+                        <div class="project-picture">
+                            <img src="image.png" alt="" width="500" height="200">
+                        </div>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="https://surl.lu/mtkzwb">ดูรายละเอียด</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม2</h3>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="">ดูรายละเอียด</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม2</h3>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="">ดูรายละเอียด</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม2</h3>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="">ดูรายละเอียด</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="about" class="main-about">
+            <div class="container">
+                <h2>About-me</h2>
+                <h3>Hello am Thanakrit Parnithsombat</h3>
+                <p>Hello, my name is Thanakrit Parnithsombat. 
+                    I am passionate about Front-End Development and aspire to become a 
+                    skilled developer in this field. I am committed to continuous self-improvement 
+                    and expanding my capabilities</p>
+            </div>
+        </section>
+ 
+        <section id="contact" class="main-contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <ul>
+                    <li><a href="https://github.com/SEAOtter25">GitHub</a></li>
+                    <li><a href="https://x.com/_SEA_0tter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/most_th.p/">Instargram</a></li>
+                </ul>
+            </div>
+        </section>
+    
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Thanakrit.All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(otherLink => {
+                    otherLink.parentElement.classList.remove('active');
+                });
+                this.parentElement.classList.add('active');
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutLink = document.querySelector('.navbar li a[href="#home"]');
+            if (aboutLink) {
+                aboutLink.parentElement.classList.add('active');
+            }
+        });
+    </script>
+    
+</body>
+</html>
