@@ -1,0 +1,198 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #334eac;
+    color: #F5EfEb;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px
+}
+
+header {
+    background-color: #bad6eb;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    display:flex;
+}
+
+.navbar ul li {
+    margin: 0 13px
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #334eac;
+}
+
+.navbar ul li.active a {
+    color:#334eac;
+}
+
+.icon {
+    margin-left: auto;
+}
+
+.icon img{
+    display: grid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: right;
+}
+
+.main-home { 
+    background-color: #fff9ef;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.main-home h1 {
+    color: #334eac;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.main-home p {
+    font-size: 1.1rem;
+    color: #bad6eb;
+    margin-bottom: 15px;    
+}
+
+.button {
+    display: inline-block;
+    background-color: #fff9ef;
+    color: #334eac;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-style:double;
+    border-radius: 50px;
+    border-color: #334eac;
+}
+
+.button:hover {
+    background-color: #334eac;
+    color: #ffffff;
+    border-style: double;
+    border-color: #ffffff;
+    border-radius: 50px;
+}
+
+.main-work {
+    padding: 60px 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.main-contact h2,
+.main-about h2,
+.main-more h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color:#334eac;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: #334eac;
+    border-color: #ffffff;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.project-card h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #ffffff;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.project-card a:hover {
+    color: #bad6eb;
+}
+
+.project-picture img{
+    border-radius: 20px;
+    max-width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+.main-about {
+    padding: 60px 0;
+    background-color: #ffffff;
+    color: #334eac;
+}
+
+.main-about .container p {
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #bad6eb;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem ;
+    bottom: 0;
+    width: 100%;
+}
+
+.main-contact ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-contact ul li a{
+    text-decoration: none;
+    color: #334eac
+}
+
+.main-contact {
+    background-color: #ffffff;
+}
+
+.main-contact ul li a:hover {
+    color: #bad6eb;
+}
