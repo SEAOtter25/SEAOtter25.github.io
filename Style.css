@@ -1,218 +1,198 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Oswald", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #334eac;
+    color: #F5EfEb;
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #bad6eb;
     padding: 1rem 0;
-    position: fixed;
-    width: 100%;
+    position: sticky;
+    top: 0;
     z-index: 100;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
+.navbar ul {
     list-style: none;
-    padding: 0;
     margin: 0;
-    display: flex;
+    display:flex;
 }
 
-nav ul li {
-    margin-left: 1.5rem;
+.navbar ul li {
+    margin: 0 13px
 }
 
-nav ul li a {
-    color: #fff;
+.navbar ul li a {
+    color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    border-radius: 5px;
+    background-color: 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: #fdd835; /* สีไฮไลท์ */
+.navbar ul li a:hover {
+    color: #334eac;
 }
 
-main {
-    padding-top: 60px; /* ชดเชยความสูงของ header ที่ fixed */
+.navbar ul li.active a {
+    color:#334eac;
 }
 
-section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.icon {
+    margin-left: auto;
 }
 
-.hero {
-    background-color: #e0f7fa;
+.icon img{
+    display: grid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: right;
+}
+
+.main-home { 
+    background-color: #fff9ef;
+    padding: 80px 0;
     text-align: center;
-    padding: 6rem 2rem;
 }
 
-.hero-content h1 {
+.main-home h1 {
+    color: #334eac;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #00838f;
+    margin-bottom: 15px;
 }
 
-.hero-content p {
+.main-home p {
     font-size: 1.1rem;
-    color: #263238;
-    margin-bottom: 2rem;
+    color: #bad6eb;
+    margin-bottom: 15px;    
 }
 
 .button {
     display: inline-block;
-    background-color: #00838f;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
+    background-color: #fff9ef;
+    color: #334eac;
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-style:double;
+    border-radius: 50px;
+    border-color: #334eac;
 }
 
 .button:hover {
-    background-color: #005662;
+    background-color: #334eac;
+    color: #ffffff;
+    border-style: double;
+    border-color: #ffffff;
+    border-radius: 50px;
 }
 
-.about h2,
-.portfolio h2,
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+.main-work {
+    padding: 60px 0;
+    color: #ffffff;
     text-align: center;
+    font-size: 1.5rem;
 }
 
-.projects-grid {
+.main-contact h2,
+.main-about h2,
+.main-more h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color:#334eac;
+}
+
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .project-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
-    width: 100%;
-    display: block;
-    height: auto; /* ปรับให้รูปภาพไม่ยืด */
-    aspect-ratio: 16 / 9; /* กำหนดอัตราส่วนภาพ (ถ้าต้องการ) */
-    object-fit: cover; /* ปรับให้รูปภาพครอบคลุมพื้นที่ */
+    background-color: #334eac;
+    border-color: #ffffff;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 15px;
 }
 
 .project-card h3 {
-    padding: 1rem;
+    color: #ffffff;
     margin-top: 0;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .project-card p {
-    padding: 0 1rem 1rem;
-    color: #555;
+    color: #ffffff;
 }
 
 .project-card a {
-    display: block;
-    background-color: #00838f;
-    color: #fff;
-    text-align: center;
-    padding: 0.8rem 0;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    color: #ffffff;
 }
 
 .project-card a:hover {
-    background-color: #005662;
+    color: #bad6eb;
 }
 
-.contact ul {
-    list-style: none;
-    padding: 0;
+.project-picture img{
+    border-radius: 20px;
+    max-width: 100%;
+    height: 300px;
     text-align: center;
 }
 
-.contact ul li {
-    margin-bottom: 1rem;
+.main-about {
+    padding: 60px 0;
+    background-color: #ffffff;
+    color: #334eac;
 }
 
-.contact ul li a {
-    color: #00838f;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact ul li a:hover {
-    color: #005662;
+.main-about .container p {
+    line-height: 1.8;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #bad6eb;
+    color: #ffffff;
     text-align: center;
-    padding: 1rem 0;
-    position: sticky; /* หรือ fixed แล้วแต่ความต้องการ */
+    padding: 1rem ;
     bottom: 0;
     width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
+.main-contact ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+}
 
-    .logo {
-        margin-bottom: 1rem;
-    }
+.main-contact ul li a{
+    text-decoration: none;
+    color: #334eac
+}
 
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
+.main-contact {
+    background-color: #ffffff;
+}
 
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero {
-        padding: 4rem 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+.main-contact ul li a:hover {
+    color: #bad6eb;
 }
