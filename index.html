@@ -1,111 +1,115 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio ของ [ชื่อของคุณ]</title>
     <link rel="stylesheet" href="Style.css">
+    <title>Portfolio</title>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">[ชื่อของคุณ]</div>
+        <nav class="navbar">
             <ul>
-                <li><a href="#home" class="active">หน้าแรก</a></li>
-                <li><a href="#about">เกี่ยวกับฉัน</a></li>
-                <li><a href="#portfolio">ผลงาน</a></li>
-                <li><a href="#contact">ติดต่อ</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <div class="icon">
+                    <img src="Profile.jpg" alt="">
+                </div>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>สวัสดีครับ/ค่ะ ผม/ดิฉัน [ชื่อของคุณ]</h1>
-                <p>นักพัฒนา Front-End ที่มีความมุ่งมั่นในการสร้างประสบการณ์ผู้ใช้ที่น่าทึ่ง</p>
-                <a href="#portfolio" class="button">ดูผลงาน</a>
+
+        <section id="home" class="main-home">
+            <div class="container">
+                <h1>Hello This My Portfolio</h1>
+                <p>I am eager to pursue a career as a Front-End Developer and am committed to continuous learning and skill enhancement.</p>
+                <a href="#work" class="button">ผลงาน</a>
+            </div>
+        </section>  
+    
+        <section id="work" class="main-work">
+            <h2>My Project</h2>
+            <div class="container">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม</h3>
+                        <div class="project-picture">
+                            <img src="image.png" alt="" >
+                        </div>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="https://surl.lu/mtkzwb">ดูรายละเอียด</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม2</h3>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="">ดูรายละเอียด</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม2</h3>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="">ดูรายละเอียด</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ร้านแว่นแฮม2</h3>
+                        <p>เว็บแสดงสถานะการจัดส่งสินค้าร้านแว่นแฮม</p>
+                        <a href="">ดูรายละเอียด</a>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <section id="about" class="about">
-            <h2>เกี่ยวกับฉัน</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta hic porro consequuntur doloremque a perspiciatis officia quidem cumque unde repellendus quibusdam magnam alias aliquam placeat esse iure, sint eius quis.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, deserunt perspiciatis! Odit ratione reprehenderit exercitationem nihil corrupti quasi, sit hic id quidem enim vel, est omnis rerum incidunt, eius asperiores.</p>
-            </section>
-
-        <section id="portfolio" class="portfolio">
-            <h2>ผลงาน</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="placeholder.png" alt="Project 1">
-                    <h3>ชื่อโปรเจกต์ 1</h3>
-                    <p>คำอธิบายสั้นๆ เกี่ยวกับโปรเจกต์นี้ และเทคโนโลยีที่ใช้</p>
-                    <a href="#" target="_blank">ดูรายละเอียด</a> </div>
-                <div class="project-card">
-                    <img src="placeholder.png" alt="Project 2">
-                    <h3>ชื่อโปรเจกต์ 2</h3>
-                    <p>คำอธิบายสั้นๆ เกี่ยวกับโปรเจกต์นี้ และเทคโนโลยีที่ใช้</p>
-                    <a href="#" target="_blank">ดูรายละเอียด</a> </div>
-                </div>
+    
+        <section id="about" class="main-about">
+            <div class="container">
+                <h2>About-me</h2>
+                <h3>Hello am Thanakrit Parnithsombat</h3>
+                <p>Hello, my name is Thanakrit Parnithsombat. 
+                    I am passionate about Front-End Development and aspire to become a 
+                    skilled developer in this field. I am committed to continuous self-improvement 
+                    and expanding my capabilities</p>
+            </div>
         </section>
-
-        <section id="contact" class="contact">
-            <h2>ติดต่อ</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <ul>
-                <li><strong>อีเมล:</strong> <a href="mailto:[อีเมลของคุณ]">[อีเมลของคุณ]</a></li>
-                <li><strong>LinkedIn:</strong> <a href="[ลิงก์ LinkedIn ของคุณ]" target="_blank">[โปรไฟล์ LinkedIn ของคุณ]</a></li>
-                <li><strong>GitHub:</strong> <a href="[ลิงก์ GitHub ของคุณ]" target="_blank">[โปรไฟล์ GitHub ของคุณ]</a></li>
+ 
+        <section id="contact" class="main-contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <ul>
+                    <li><a href="https://github.com/SEAOtter25">GitHub</a></li>
+                    <li><a href="https://x.com/_SEA_0tter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/most_th.p/">Instargram</a></li>
                 </ul>
+            </div>
         </section>
+    
     </main>
 
     <footer>
-        <p>&copy; 2025 [ชื่อของคุณ]. สงวนลิขสิทธิ์.</p>
+        <div class="container">
+            <p>&copy; 2025 Thanakrit.All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        // JavaScript สำหรับการ Highlight Navigation
-        const navLinks = document.querySelectorAll('nav ul li a');
+        const navLinks = document.querySelectorAll('.navbar a');
 
         navLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                // ลบ class 'active' จากลิงก์ทั้งหมด
-                navLinks.forEach(otherLink => otherLink.classList.remove('active'));
-                // เพิ่ม class 'active' ให้กับลิงก์ที่ถูกคลิก
-                this.classList.add('active');
-
-                // หากต้องการให้เลื่อนไปยังส่วนต่างๆ เมื่อคลิกที่ Nav Bar (Smooth Scrolling)
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    event.preventDefault(); // ป้องกันการกระโดดไปยังตำแหน่งทันที
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
+            link.addEventListener('click', function() {
+                navLinks.forEach(otherLink => {
+                    otherLink.parentElement.classList.remove('active');
+                });
+                this.parentElement.classList.add('active');
             });
         });
-
-        // Highlight Nav Bar เมื่อเลื่อนหน้าจอ (Optional)
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navHeight = document.querySelector('nav').offsetHeight;
-            const scrollY = window.scrollY;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - navHeight;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                const correspondingLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
-
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    if (correspondingLink) {
-                        correspondingLink.classList.add('active');
-                    }
-                }
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutLink = document.querySelector('.navbar li a[href="#home"]');
+            if (aboutLink) {
+                aboutLink.parentElement.classList.add('active');
+            }
         });
     </script>
+    
 </body>
 </html>
