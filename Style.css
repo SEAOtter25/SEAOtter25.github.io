@@ -300,8 +300,8 @@ footer {
 }
 
 .popup-image {
-    max-width: 90%;
-    max-height: 80%;
+    max-width: 45%;
+    max-height: 45%;
     margin-bottom: 10px;
     display: block;
     border-radius: 20px;
